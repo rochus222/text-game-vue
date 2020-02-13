@@ -1,28 +1,66 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Game />
+    <Inventory />
+    <Dialog />
+    <Avatar />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Game from './components/Game';
+import Inventory from './components/Inventory';
+import Dialog from './components/Dialog';
+import Avatar from './components/Avatar'
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    Game,
+    Inventory,
+    Dialog,
+    Avatar
   }
 };
 </script>
 
 <style lang="less">
+@import url('./styles/variables.less');
+
+body {
+  background: @blue;
+  color: @white;
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  max-width: 800px;
+  margin: 60px auto;
+}
+
+.box {
+  position: relative;
+  border-radius: 5px;
+  background: @dark-grey;
+  width: 100%;
+  margin-bottom: 5px;
+  width: 100%;
+  display: block;
+  float: left;
+}
+
+.box:nth-child(2n+1) {
+  width: 59%;
+  margin-right: 1%;
+}
+
+.box:nth-child(2n) {
+  width: 40%;
+}
+
+a, a:hover {
+  color: inherit;
+  font-weight: 900;
 }
 </style>
